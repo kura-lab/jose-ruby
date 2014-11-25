@@ -1,0 +1,6 @@
+AllCops:
+  Include:
+    - 'sample/**'
+    - 'src/**'
+  Exclude:
+    - 'spec/**'
