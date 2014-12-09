@@ -13,3 +13,6 @@ Json Web Token (JWT) Library for Ruby
 * HMAC-SHA256
 * HMAC-SHA384
 * HMAC-SHA512
+* RSA-SHA256
+* RSA-SHA384
+* RSA-SHA512
