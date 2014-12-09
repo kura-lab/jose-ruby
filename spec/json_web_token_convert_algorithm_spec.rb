@@ -6,7 +6,7 @@ describe JsonWebToken do
     @jwt = JsonWebToken.new
   end
 
-  describe 'convert_algorithm' do
+  describe 'convert_algorithm_hmac' do
     context 'normal' do
       it 'should return algorithm' do
         {
@@ -15,7 +15,7 @@ describe JsonWebToken do
           'HS512' => OpenSSL::Digest::SHA512,
         }.each { |alg, type|
           ssl = @jwt.instance_eval {
-            convert_algorithm(alg)
+            convert_algorithm_hmac(alg)
           }
           expect(ssl.is_a? type).to be_truthy
         }
@@ -26,7 +26,7 @@ describe JsonWebToken do
       it 'should fail' do
         alg = 'HS1'
         expect{
-          @jwt.instance_eval{convert_algorithm(alg)}
+          @jwt.instance_eval{convert_algorithm_hmac(alg)}
         }.to raise_error(RuntimeError, "'#{alg}' is unsupported algorithm.")
       end
     end
