@@ -4,7 +4,7 @@
 # JSON Web Token Sample
 
 require 'date'
-require './src/json_web_token'
+require '../src/json_web_token'
 
 header = {
   alg: 'HS256',
